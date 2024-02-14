@@ -6,7 +6,10 @@
   "path": "/docs",
   "icon": "https://www.cloud-apim.com/assets/logo/made-with-cloud-apim-inverted.png",
   "max_user_created_apikeys": 1,
-  "moesif:": true,
+  "moesif:": {
+    "enabled": true,
+    "appId": "${environment.MOESIF_APP_ID}"
+  },
   "plans": [
     {
       "id": "default",
