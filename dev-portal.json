@@ -6,7 +6,7 @@
   "path": "/docs",
   "icon": "https://www.cloud-apim.com/assets/logo/made-with-cloud-apim-inverted.png",
   "max_user_created_apikeys": 1,
-  "moesif:": {
+  "moesif": {
     "enabled": true,
     "app_id": "${environment.MOESIF_APP_ID}",
     "customer_id_keypath": "metadata.email",
