@@ -8,7 +8,7 @@
   "max_user_created_apikeys": 1,
   "moesif:": {
     "enabled": true,
-    "appId": "${environment.MOESIF_APP_ID}",
+    "app_id": "${environment.MOESIF_APP_ID}",
     "customer_id_keypath": "metadata.email",
     "company_id_keypath": "metadata.email"
   },
