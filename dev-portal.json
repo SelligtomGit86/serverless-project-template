@@ -15,8 +15,8 @@
   "moesif" : {
     "app_id" : "${environment.MOESIF_APP_ID}",
     "enabled" : true,
-    "company_id_keypath" : "metadata.email",
-    "customer_id_keypath" : "metadata.email"
+    "company_id_keypath" : "metadata.cus_comp",
+    "customer_id_keypath" : "metadata.cus_email"
   },
   "enabled" : true,
   "examples" : true,
