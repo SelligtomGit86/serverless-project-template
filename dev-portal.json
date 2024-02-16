@@ -1,1 +1,24 @@
-"{\n  \"auth\": true,\n  \"icon\": \"https://www.cloud-apim.com/assets/logo/made-with-cloud-apim-inverted.png\",\n  \"path\": \"/docs\",\n  \"plans\": [\n    {\n      \"id\": \"default\",\n      \"name\": \"default\",\n      \"daily\": \"10000\",\n      \"default\": true,\n      \"monthly\": \"10000\",\n      \"throttling\": 100,\n      \"description\": \"The default apikey plan\"\n    }\n  ],\n  \"title\": \"PORTAIL DE THOMAS POUR MOESIF\",\n  \"moesif\": {\n    \"enabled\": false,\n    \"app_id\": \"${environment.MOESIF_APP_ID}\",\n    \"company_id_keypath\": \"metadata.company\",\n    \"customer_id_keypath\": \"metadata.customer\"\n  },\n  \"enabled\": true,\n  \"examples\": true,\n  \"max_user_created_apikeys\": 1\n}"
+{
+  "auth" : true,
+  "icon" : "https://www.cloud-apim.com/assets/logo/made-with-cloud-apim-inverted.png",
+  "path" : "/docs",
+  "plans" : [ {
+    "id" : "default",
+    "name" : "default",
+    "daily" : "10000",
+    "default" : true,
+    "monthly" : "10000",
+    "throttling" : 100,
+    "description" : "The default apikey plan"
+  } ],
+  "title" : "test portal",
+  "moesif" : {
+    "app_id" : "eyJhcHAiOiI1NjU6NDg1IiwidmVyIjoiMi4xIiwib3JnIjoiNjQwOjM2NyIsImlhdCI6MTcwNjc0NTYwMH0.GQWnLGGQ3iATkius7a8AQVkXgijKIPH-6Y8AWK4Vv0c",
+    "enabled" : false,
+    "company_id_keypath" : "metadata.company_id",
+    "customer_id_keypath" : "metadata.customer_id"
+  },
+  "enabled" : true,
+  "examples" : true,
+  "max_user_created_apikeys" : 1
+}
