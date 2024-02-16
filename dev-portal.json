@@ -13,10 +13,10 @@
   } ],
   "title" : "test portal",
   "moesif" : {
-    "app_id" : "eyJhcHAiOiI1NjU6NDg1IiwidmVyIjoiMi4xIiwib3JnIjoiNjQwOjM2NyIsImlhdCI6MTcwNjc0NTYwMH0.GQWnLGGQ3iATkius7a8AQVkXgijKIPH-6Y8AWK4Vv0c",
-    "enabled" : false,
-    "company_id_keypath" : "metadata.emailKey",
-    "customer_id_keypath" : "metadata.emailKey"
+    "app_id" : "${environment.MOESIF_APP_ID}",
+    "enabled" : true,
+    "company_id_keypath" : "metadata.companyID",
+    "customer_id_keypath" : "metadata.cusID"
   },
   "enabled" : true,
   "examples" : true,
