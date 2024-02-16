@@ -14,9 +14,9 @@
   "title" : "test portal",
   "moesif" : {
     "app_id" : "${environment.MOESIF_APP_ID}",
-    "enabled" : true,
-    "company_id_keypath" : "metadata.cus_comp",
-    "customer_id_keypath" : "metadata.cus_email"
+    "enabled" : false,
+    "company_id_keypath" : "",
+    "customer_id_keypath" : ""
   },
   "enabled" : true,
   "examples" : true,
