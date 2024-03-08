@@ -11,14 +11,14 @@
     "throttling" : 100,
     "description" : "The default apikey plan"
   } ],
-  "title" : "test portal",
+  "title" : "Portal configured via Postman",
   "moesif" : {
     "app_id" : "${environment.MOESIF_APP_ID}",
     "enabled" : true,
-    "company_id_keypath" : "metadata.companyID",
-    "customer_id_keypath" : "metadata.cusID"
+    "company_id_keypath" : "metadata.company_email",
+    "customer_id_keypath" : "metadata.customer_email"
   },
   "enabled" : true,
-  "examples" : true,
-  "max_user_created_apikeys" : 1
+  "examples" : false,
+  "max_user_created_apikeys" : 5
 }
