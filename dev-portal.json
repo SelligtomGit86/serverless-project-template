@@ -18,6 +18,22 @@
     "monthly" : 3000,
     "throttling" : 20,
     "description" : "Demo api key plan"
+  }, {
+    "id" : "premium",
+    "name" : "Premium",
+    "daily" : 2000,
+    "default" : false,
+    "monthly" : 30000,
+    "throttling" : 200,
+    "description" : "Premium api key plan"
+  }, {
+    "id" : "diamond",
+    "name" : "Diamond",
+    "daily" : 20000,
+    "default" : false,
+    "monthly" : 1000000,
+    "throttling" : 2000,
+    "description" : "Diamond api key plan"
   } ],
   "title" : "Portal configured via Postman (V2)",
   "moesif" : {
@@ -28,5 +44,5 @@
   },
   "enabled" : true,
   "examples" : true,
-  "max_user_created_apikeys" : 2
+  "max_user_created_apikeys" : 10
 }
