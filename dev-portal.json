@@ -1,15 +1,12 @@
 {
-  "title" : "New portal config",
-  "enabled" : true,
   "auth" : true,
-  "examples" : true,
   "icon" : "https://www.cloud-apim.com/assets/logo/made-with-cloud-apim-inverted.png",
   "path" : "/docs",
   "plans" : [ {
     "id" : "default",
     "name" : "default",
     "daily" : 10000,
-    "default" : false,
+    "default" : true,
     "monthly" : 10000,
     "throttling" : 100,
     "description" : "The default apikey plan"
@@ -17,7 +14,7 @@
     "id" : "demo",
     "name" : "DEMO_PLAN",
     "daily" : 200,
-    "default" : true,
+    "default" : false,
     "monthly" : 3000,
     "throttling" : 20,
     "description" : "Demo api key plan"
@@ -38,10 +35,14 @@
     "throttling" : 2000,
     "description" : "Diamond api key plan"
   } ],
+  "title" : "Configured from localhost",
   "moesif" : {
+    "app_id" : "${environment.MOESIF_APP_ID}",
     "enabled" : false,
-    "customer_id_keypath" : "metadata.customer_email",
-    "company_id_keypath" : "metadata.company_email"
+    "company_id_keypath" : "metadata.customer.id",
+    "customer_id_keypath" : "metadata.customer.email"
   },
-  "max_user_created_apikeys" : 6
+  "enabled" : true,
+  "examples" : false,
+  "max_user_created_apikeys" : 2
 }
