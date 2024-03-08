@@ -1,5 +1,8 @@
 {
+  "title" : "Configured from localhost",
+  "enabled" : true,
   "auth" : true,
+  "examples" : false,
   "icon" : "https://www.cloud-apim.com/assets/logo/made-with-cloud-apim-inverted.png",
   "path" : "/docs",
   "plans" : [ {
@@ -35,14 +38,11 @@
     "throttling" : 2000,
     "description" : "Diamond api key plan"
   } ],
-  "title" : "Portal configured via Postman (V2)",
   "moesif" : {
-    "app_id" : "${environment.MOESIF_APP_ID}",
+    "app_id" : "eyJhcHAiOiI1NjU6NDg1IiwidmVyIjoiMi4xIiwib3JnIjoiNjQwOjM2NyIsImlhdCI6MTcwNjc0NTYwMH0.GQWnLGGQ3iATkius7a8AQVkXgijKIPH-6Y8AWK4Vv0c",
     "enabled" : false,
-    "company_id_keypath" : "metadata.company_email",
-    "customer_id_keypath" : "metadata.customer_email"
+    "customer_id_keypath" : "metadata.customer_email",
+    "company_id_keypath" : "metadata.company_email"
   },
-  "enabled" : true,
-  "examples" : true,
-  "max_user_created_apikeys" : 10
+  "max_user_created_apikeys" : 2
 }
