@@ -1,5 +1,8 @@
 {
+  "title" : "Updated portal for dev",
+  "enabled" : true,
   "auth" : true,
+  "examples" : false,
   "icon" : "https://www.cloud-apim.com/assets/logo/made-with-cloud-apim-inverted.png",
   "path" : "/docs",
   "plans" : [ {
@@ -35,14 +38,8 @@
     "throttling" : 2000,
     "description" : "Diamond api key plan"
   } ],
-  "title" : "Configured from localhost",
   "moesif" : {
-    "app_id" : "${environment.MOESIF_APP_ID}",
-    "enabled" : false,
-    "company_id_keypath" : "metadata.customer.id",
-    "customer_id_keypath" : "metadata.customer.email"
+    "enabled" : false
   },
-  "enabled" : true,
-  "examples" : false,
-  "max_user_created_apikeys" : 2
+  "max_user_created_apikeys" : 4
 }
