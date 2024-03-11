@@ -37,8 +37,8 @@
   } ],
   "title" : "Configured from localhost",
   "moesif" : {
-    "app_id" : "${environment.MOESIF_APP_ID}",
-    "enabled" : false,
+    "app_id" : "eyJhcHAiOiI1NjU6NDg1IiwidmVyIjoiMi4xIiwib3JnIjoiNjQwOjM2NyIsImlhdCI6MTcwNjc0NTYwMH0.GQWnLGGQ3iATkius7a8AQVkXgijKIPH-6Y8AWK4Vv0c",
+    "enabled" : true,
     "company_id_keypath" : "metadata.customer_email",
     "customer_id_keypath" : "metadata.customer_id"
   },
