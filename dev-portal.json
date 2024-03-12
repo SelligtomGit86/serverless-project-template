@@ -11,7 +11,7 @@
     "throttling" : 200,
     "description" : "Premium plan"
   } ],
-  "title" : "Other portal",
+  "title" : "Test from code editor (C-APIM)",
   "moesif" : {
     "app_id" : "${environment.MOESIF_APP_ID}",
     "enabled" : false,
@@ -20,5 +20,5 @@
   },
   "enabled" : true,
   "examples" : true,
-  "max_user_created_apikeys" : 5
+  "max_user_created_apikeys" : 100
 }
