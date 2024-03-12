@@ -1,5 +1,5 @@
 {
-  "title" : "new config 12/03",
+  "title" : "Premium portal for dev",
   "enabled" : true,
   "auth" : true,
   "examples" : true,
@@ -20,5 +20,5 @@
     "company_id_keypath" : "metadata.email",
     "customer_id_keypath" : "metadata.id"
   },
-  "max_user_created_apikeys" : 4
+  "max_user_created_apikeys" : 6
 }
