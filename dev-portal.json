@@ -1,5 +1,8 @@
 {
+  "title" : "new config 12/03",
+  "enabled" : true,
   "auth" : true,
+  "examples" : true,
   "icon" : "https://www.cloud-apim.com/assets/logo/made-with-cloud-apim-inverted.png",
   "path" : "/docs",
   "plans" : [ {
@@ -10,39 +13,12 @@
     "monthly" : 10000,
     "throttling" : 100,
     "description" : "The default apikey plan"
-  }, {
-    "id" : "demo",
-    "name" : "DEMO_PLAN",
-    "daily" : 200,
-    "default" : false,
-    "monthly" : 3000,
-    "throttling" : 20,
-    "description" : "Demo api key plan"
-  }, {
-    "id" : "premium",
-    "name" : "Premium",
-    "daily" : 2000,
-    "default" : false,
-    "monthly" : 30000,
-    "throttling" : 200,
-    "description" : "Premium api key plan"
-  }, {
-    "id" : "diamond",
-    "name" : "Diamond",
-    "daily" : 20000,
-    "default" : false,
-    "monthly" : 1000000,
-    "throttling" : 2000,
-    "description" : "Diamond api key plan"
   } ],
-  "title" : "Configured from localhost",
   "moesif" : {
+    "enabled" : false,
     "app_id" : "${environment.MOESIF_APP_ID}",
-    "enabled" : true,
     "company_id_keypath" : "metadata.email",
     "customer_id_keypath" : "metadata.id"
   },
-  "enabled" : true,
-  "examples" : false,
-  "max_user_created_apikeys" : 2
+  "max_user_created_apikeys" : 4
 }
