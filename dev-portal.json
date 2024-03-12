@@ -5,13 +5,13 @@
   "plans" : [ {
     "id" : "default",
     "name" : "default",
-    "daily" : 100,
+    "daily" : 500,
     "default" : true,
-    "monthly" : 1000,
-    "throttling" : 10,
-    "description" : "Simple plan"
+    "monthly" : 8500,
+    "throttling" : 200,
+    "description" : "Premium plan"
   } ],
-  "title" : "Next test",
+  "title" : "Set premium plan",
   "moesif" : {
     "app_id" : "eyJhcHAiOiI1NjU6NDg1IiwidmVyIjoiMi4xIiwib3JnIjoiNjQwOjM2NyIsImlhdCI6MTcwNjc0NTYwMH0.GQWnLGGQ3iATkius7a8AQVkXgijKIPH-6Y8AWK4Vv0c",
     "enabled" : false,
@@ -20,5 +20,5 @@
   },
   "enabled" : true,
   "examples" : true,
-  "max_user_created_apikeys" : 4
+  "max_user_created_apikeys" : 12
 }
