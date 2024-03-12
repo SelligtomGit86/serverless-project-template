@@ -11,14 +11,14 @@
     "throttling" : 200,
     "description" : "Premium plan"
   } ],
-  "title" : "Set premium plan",
+  "title" : "Other portal",
   "moesif" : {
-    "app_id" : "eyJhcHAiOiI1NjU6NDg1IiwidmVyIjoiMi4xIiwib3JnIjoiNjQwOjM2NyIsImlhdCI6MTcwNjc0NTYwMH0.GQWnLGGQ3iATkius7a8AQVkXgijKIPH-6Y8AWK4Vv0c",
+    "app_id" : "${environment.MOESIF_APP_ID}",
     "enabled" : false,
     "company_id_keypath" : "metadata.email",
     "customer_id_keypath" : "metadata.id"
   },
   "enabled" : true,
   "examples" : true,
-  "max_user_created_apikeys" : 12
+  "max_user_created_apikeys" : 5
 }
