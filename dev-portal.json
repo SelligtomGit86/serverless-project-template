@@ -1,24 +1,24 @@
 {
-  "title" : "Premium portal for dev",
-  "enabled" : true,
   "auth" : true,
-  "examples" : true,
   "icon" : "https://www.cloud-apim.com/assets/logo/made-with-cloud-apim-inverted.png",
   "path" : "/docs",
   "plans" : [ {
     "id" : "default",
     "name" : "default",
-    "daily" : 10000,
+    "daily" : 100,
     "default" : true,
-    "monthly" : 10000,
-    "throttling" : 100,
-    "description" : "The default apikey plan"
+    "monthly" : 1000,
+    "throttling" : 10,
+    "description" : "Simple plan"
   } ],
+  "title" : "Another test",
   "moesif" : {
-    "enabled" : false,
     "app_id" : "${environment.MOESIF_APP_ID}",
+    "enabled" : false,
     "company_id_keypath" : "metadata.email",
     "customer_id_keypath" : "metadata.id"
   },
-  "max_user_created_apikeys" : 6
+  "enabled" : true,
+  "examples" : true,
+  "max_user_created_apikeys" : 3
 }
