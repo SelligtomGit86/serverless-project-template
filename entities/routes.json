@@ -97,9 +97,9 @@
     "tenant" : "default",
     "teams" : [ "default" ]
   },
-  "id" : "get_root",
-  "name" : "GET root",
-  "description" : "GET root",
+  "id" : "get_demo",
+  "name" : "GET demo",
+  "description" : "GET demo",
   "tags" : [ ],
   "metadata" : {
     "foo" : "${environment.FOO}"
@@ -191,9 +191,9 @@
     "tenant" : "default",
     "teams" : [ "default" ]
   },
-  "id" : "get_root",
-  "name" : "GET root",
-  "description" : "GET root",
+  "id" : "get_demo2",
+  "name" : "GET demo2",
+  "description" : "GET demo2",
   "tags" : [ ],
   "metadata" : {
     "foo" : "${environment.FOO}"
