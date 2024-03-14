@@ -1,105 +1,187 @@
-[
-  {
-    "_loc": {
-      "tenant": "default",
-      "teams": [
-        "default"
-      ]
-    },
-    "id": "get_root",
-    "name": "GET root",
-    "description": "GET root",
-    "tags": [],
-    "metadata": { "foo": "${environment.FOO}" },
-    "enabled": true,
-    "debug_flow": false,
-    "export_reporting": false,
-    "capture": false,
-    "groups": [
-      "default"
-    ],
-    "frontend": {
-      "domains": [
-        "${environment.HOST}/"
-      ],
-      "strip_path": true,
-      "exact": true,
-      "headers": {},
-      "query": {},
-      "methods": []
-    },
-    "backend": {
-      "targets": [
-        {
-          "id": "target_1",
-          "hostname": "mirror.otoroshi.io",
-          "port": 443,
-          "tls": true,
-          "weight": 1,
-          "predicate": {
-            "type": "AlwaysMatch"
-          },
-          "protocol": "HTTP/1.1",
-          "ip_address": null,
-          "tls_config": {
-            "certs": [],
-            "trusted_certs": [],
-            "enabled": false,
-            "loose": false,
-            "trust_all": false
-          }
-        }
-      ],
-      "root": "/",
-      "rewrite": false,
-      "load_balancing": {
-        "type": "RoundRobin"
-      },
-      "client": {
-        "retries": 1,
-        "max_errors": 20,
-        "retry_initial_delay": 50,
-        "backoff_factor": 2,
-        "call_timeout": 30000,
-        "call_and_stream_timeout": 120000,
-        "connection_timeout": 10000,
-        "idle_timeout": 60000,
-        "global_timeout": 30000,
-        "sample_interval": 2000,
-        "proxy": {},
-        "custom_timeouts": [],
-        "cache_connection_settings": {
-          "enabled": false,
-          "queue_size": 2048
-        }
-      },
-      "health_check": {
-        "enabled": false,
-        "url": "",
-        "timeout": 5000,
-        "healthyStatuses": [],
-        "unhealthyStatuses": []
+[ {
+  "id" : "get_root",
+  "_loc" : {
+    "teams" : [ "default" ],
+    "tenant" : "default"
+  },
+  "kind" : "Route",
+  "name" : "GET root",
+  "tags" : [ ],
+  "groups" : [ "default" ],
+  "backend" : {
+    "root" : "/",
+    "client" : {
+      "proxy" : { },
+      "retries" : 1,
+      "max_errors" : 20,
+      "call_timeout" : 30000,
+      "idle_timeout" : 60000,
+      "backoff_factor" : 2,
+      "global_timeout" : 30000,
+      "custom_timeouts" : [ ],
+      "sample_interval" : 2000,
+      "connection_timeout" : 10000,
+      "retry_initial_delay" : 50,
+      "call_and_stream_timeout" : 120000,
+      "cache_connection_settings" : {
+        "enabled" : false,
+        "queue_size" : 2048
       }
     },
-    "backend_ref": null,
-    "plugins": [
-      {
-        "enabled": true,
-        "debug": false,
-        "plugin": "cp:otoroshi.next.plugins.StaticResponse",
-        "include": [],
-        "exclude": [],
-        "config": {
-          "status": 200,
-          "headers": {
-            "Content-Type": "text/html"
-          },
-          "body": "<html><body><h1>Welcome to your new API</h1><p>This content is provided by a route in your project,<br/> you can also go to the <a href=\"/docs\">dev portal</a> or to the <a href=\"/todos\">list of todos</a>.</p></body></html>"
-        },
-        "plugin_index": {},
-        "nodeId": "cp:otoroshi.next.plugins.StaticResponse"
+    "rewrite" : false,
+    "targets" : [ {
+      "id" : "target_1",
+      "tls" : true,
+      "port" : 443,
+      "weight" : 1,
+      "hostname" : "mirror.otoroshi.io",
+      "protocol" : "HTTP/1.1",
+      "predicate" : {
+        "type" : "AlwaysMatch"
+      },
+      "ip_address" : null,
+      "tls_config" : {
+        "certs" : [ ],
+        "loose" : false,
+        "enabled" : false,
+        "trust_all" : false,
+        "trusted_certs" : [ ]
       }
-    ],
-    "kind": "Route"
-  }
-]
+    } ],
+    "health_check" : {
+      "url" : "",
+      "enabled" : false,
+      "timeout" : 5000,
+      "healthyStatuses" : [ ],
+      "unhealthyStatuses" : [ ]
+    },
+    "load_balancing" : {
+      "type" : "RoundRobin"
+    }
+  },
+  "capture" : false,
+  "enabled" : true,
+  "plugins" : [ {
+    "debug" : false,
+    "config" : {
+      "body" : "<html><body><h1>Welcome to your new API</h1><p>This content is provided by a route in your project,<br/> you can also go to the <a href=\"/docs\">dev portal</a> or to the <a href=\"/todos\">list of todos</a>.</p></body></html>",
+      "status" : 200,
+      "headers" : {
+        "Content-Type" : "text/html"
+      }
+    },
+    "nodeId" : "cp:otoroshi.next.plugins.StaticResponse",
+    "plugin" : "cp:otoroshi.next.plugins.StaticResponse",
+    "enabled" : true,
+    "exclude" : [ ],
+    "include" : [ ],
+    "plugin_index" : { }
+  } ],
+  "frontend" : {
+    "exact" : true,
+    "query" : { },
+    "domains" : [ "${environment.HOST}/" ],
+    "headers" : { },
+    "methods" : [ ],
+    "strip_path" : true
+  },
+  "metadata" : {
+    "foo" : "${environment.FOO}"
+  },
+  "debug_flow" : false,
+  "backend_ref" : null,
+  "description" : "GET root",
+  "export_reporting" : false
+}, {
+  "_loc" : {
+    "tenant" : "default",
+    "teams" : [ "default" ]
+  },
+  "id" : "demo",
+  "name" : "demo",
+  "description" : "A simple route for a demo",
+  "tags" : [ ],
+  "metadata" : { },
+  "enabled" : true,
+  "debug_flow" : false,
+  "export_reporting" : false,
+  "capture" : false,
+  "groups" : [ "default" ],
+  "frontend" : {
+    "domains" : [ [ "${environment.HOST}/demo" ] ],
+    "strip_path" : true,
+    "exact" : true,
+    "headers" : { },
+    "query" : { },
+    "methods" : [ "GET" ]
+  },
+  "backend" : {
+    "targets" : [ {
+      "id" : "target_1",
+      "hostname" : "mirror.otoroshi.io",
+      "port" : 443,
+      "tls" : true,
+      "weight" : 1,
+      "predicate" : {
+        "type" : "AlwaysMatch"
+      },
+      "protocol" : "HTTP/1.1",
+      "ip_address" : null,
+      "tls_config" : {
+        "certs" : [ ],
+        "trusted_certs" : [ ],
+        "enabled" : false,
+        "loose" : false,
+        "trust_all" : false
+      }
+    } ],
+    "root" : "/",
+    "rewrite" : false,
+    "load_balancing" : {
+      "type" : "RoundRobin"
+    },
+    "client" : {
+      "retries" : 1,
+      "max_errors" : 20,
+      "retry_initial_delay" : 50,
+      "backoff_factor" : 2,
+      "call_timeout" : 30000,
+      "call_and_stream_timeout" : 120000,
+      "connection_timeout" : 10000,
+      "idle_timeout" : 60000,
+      "global_timeout" : 30000,
+      "sample_interval" : 2000,
+      "proxy" : { },
+      "custom_timeouts" : [ ],
+      "cache_connection_settings" : {
+        "enabled" : false,
+        "queue_size" : 2048
+      }
+    },
+    "health_check" : {
+      "enabled" : false,
+      "url" : "",
+      "timeout" : 5000,
+      "healthyStatuses" : [ ],
+      "unhealthyStatuses" : [ ]
+    }
+  },
+  "backend_ref" : null,
+  "plugins" : [ {
+    "enabled" : false,
+    "debug" : false,
+    "plugin" : "cp:otoroshi.next.plugins.StaticResponse",
+    "include" : [ ],
+    "exclude" : [ ],
+    "config" : {
+      "status" : 200,
+      "headers" : {
+        "Content-Type" : "text/html"
+      },
+      "body" : "<html><body><h1>Welcome to your new API</h1><p>This content is provided by a route in your project,<br/> you can also go to the <a href=\"/docs\">dev portal</a> or to the <a href=\"/todos\">list of todos</a>.</p></body></html>"
+    },
+    "plugin_index" : { },
+    "nodeId" : "cp:otoroshi.next.plugins.StaticResponse"
+  } ],
+  "kind" : "Route"
+} ]
