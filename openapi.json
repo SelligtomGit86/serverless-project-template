@@ -430,7 +430,7 @@
         } ]
       },
       "google" : {
-        "root" : "/google",
+        "root" : "/",
         "rewrite" : false,
         "targets" : [ {
           "hostname" : "google.fr",
