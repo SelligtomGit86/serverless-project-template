@@ -135,6 +135,43 @@
         }
       }
     },
+    "/thomas" : {
+      "get" : {
+        "tags" : [ ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Task"
+                  }
+                }
+              }
+            },
+            "description" : "OK"
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error"
+                }
+              }
+            },
+            "description" : "Generic error response"
+          }
+        },
+        "operationId" : "getThomasRoute",
+        "x-cloud-apim-backend" : {
+          "$ref" : "#/components/x-cloud-apim-backends/jsonplaceholder"
+        },
+        "x-cloud-apim-plugins" : {
+          "$ref" : "#/components/x-cloud-apim-plugins/all"
+        }
+      }
+    },
     "/todos/{taskId}" : {
       "get" : {
         "tags" : [ "task" ],
@@ -247,43 +284,6 @@
         "required" : true,
         "description" : "The id of the task"
       } ]
-    },
-    "/thomas" : {
-      "get" : {
-        "tags" : [ ],
-        "responses" : {
-          "200" : {
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "array",
-                  "items" : {
-                    "$ref" : "#/components/schemas/Task"
-                  }
-                }
-              }
-            },
-            "description" : "OK"
-          },
-          "default" : {
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/Error"
-                }
-              }
-            },
-            "description" : "Generic error response"
-          }
-        },
-        "operationId" : "getThomasRoute",
-        "x-cloud-apim-backend" : {
-          "$ref" : "#/components/x-cloud-apim-backends/jsonplaceholder"
-        },
-        "x-cloud-apim-plugins" : {
-          "$ref" : "#/components/x-cloud-apim-plugins/all"
-        }
-      }
     }
   },
   "openapi" : "3.1.0",
@@ -427,6 +427,15 @@
           "tls" : true,
           "port" : 443,
           "hostname" : "jsonplaceholder.typicode.com"
+        } ]
+      },
+      "google" : {
+        "root" : "/google",
+        "rewrite" : false,
+        "targets" : [ {
+          "hostname" : "google.fr",
+          "port" : 443,
+          "tls" : true
         } ]
       }
     }
