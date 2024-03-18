@@ -209,6 +209,44 @@
         "required" : true,
         "description" : "The id of the task"
       } ]
+    },
+    "/demooo" : {
+      "get" : {
+        "tags" : [ ],
+        "summary" : "A super route for a super demoooo",
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Task"
+                  }
+                }
+              }
+            },
+            "description" : "OK"
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error"
+                }
+              }
+            },
+            "description" : "Generic error response"
+          }
+        },
+        "operationId" : "getDemooo",
+        "x-cloud-apim-backend" : {
+          "$ref" : "#/components/x-cloud-apim-backends/demo"
+        },
+        "x-cloud-apim-plugins" : {
+          "$ref" : "#/components/x-cloud-apim-plugins/all"
+        }
+      }
     }
   },
   "openapi" : "3.1.0",
@@ -336,8 +374,8 @@
       } ]
     },
     "x-cloud-apim-backends" : {
-      "jsonplaceholder" : {
-        "root" : "/",
+      "demo" : {
+        "root" : "/demo",
         "rewrite" : false,
         "targets" : [ {
           "tls" : true,
@@ -345,13 +383,13 @@
           "hostname" : "jsonplaceholder.typicode.com"
         } ]
       },
-      "demo" : {
-        "root" : "/demo",
+      "jsonplaceholder" : {
+        "root" : "/",
         "rewrite" : false,
         "targets" : [ {
-          "hostname" : "jsonplaceholder.typicode.com",
+          "tls" : true,
           "port" : 443,
-          "tls" : true
+          "hostname" : "jsonplaceholder.typicode.com"
         } ]
       }
     }
