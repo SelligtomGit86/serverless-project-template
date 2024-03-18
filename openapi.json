@@ -97,6 +97,44 @@
         }
       }
     },
+    "/demooo" : {
+      "get" : {
+        "tags" : [ ],
+        "summary" : "A super route for a super demoooo",
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Task"
+                  }
+                }
+              }
+            },
+            "description" : "OK"
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error"
+                }
+              }
+            },
+            "description" : "Generic error response"
+          }
+        },
+        "operationId" : "getDemooo",
+        "x-cloud-apim-backend" : {
+          "$ref" : "#/components/x-cloud-apim-backends/demo"
+        },
+        "x-cloud-apim-plugins" : {
+          "$ref" : "#/components/x-cloud-apim-plugins/all"
+        }
+      }
+    },
     "/todos/{taskId}" : {
       "get" : {
         "tags" : [ "task" ],
@@ -210,10 +248,9 @@
         "description" : "The id of the task"
       } ]
     },
-    "/demooo" : {
+    "/thomas" : {
       "get" : {
         "tags" : [ ],
-        "summary" : "A super route for a super demoooo",
         "responses" : {
           "200" : {
             "content" : {
@@ -239,9 +276,9 @@
             "description" : "Generic error response"
           }
         },
-        "operationId" : "getDemooo",
+        "operationId" : "getThomasRoute",
         "x-cloud-apim-backend" : {
-          "$ref" : "#/components/x-cloud-apim-backends/demo"
+          "$ref" : "#/components/x-cloud-apim-backends/jsonplaceholder"
         },
         "x-cloud-apim-plugins" : {
           "$ref" : "#/components/x-cloud-apim-plugins/all"
