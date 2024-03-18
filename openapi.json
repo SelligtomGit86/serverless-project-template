@@ -345,8 +345,8 @@
           "hostname" : "jsonplaceholder.typicode.com"
         } ]
       },
-      "open api demo backend" : {
-        "root" : "/demobackend",
+      "demo" : {
+        "root" : "/demo",
         "rewrite" : false,
         "targets" : [ {
           "hostname" : "jsonplaceholder.typicode.com",
