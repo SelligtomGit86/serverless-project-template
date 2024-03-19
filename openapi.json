@@ -371,6 +371,13 @@
         },
         "plugin" : "cp:otoroshi.next.plugins.ApikeyCalls",
         "enabled" : true
+      } ],
+      "demoCategory" : [ {
+        "plugin" : "cp:otoroshi.next.plugins.OverrideHost",
+        "enabled" : true
+      }, {
+        "plugin" : "cp:otoroshi.next.plugins.Cors",
+        "enabled" : false
       } ]
     },
     "x-cloud-apim-backends" : {
@@ -383,6 +390,15 @@
           "hostname" : "jsonplaceholder.typicode.com"
         } ]
       },
+      "google" : {
+        "root" : "/",
+        "rewrite" : false,
+        "targets" : [ {
+          "tls" : true,
+          "port" : 443,
+          "hostname" : "google.fr"
+        } ]
+      },
       "jsonplaceholder" : {
         "root" : "/",
         "rewrite" : false,
@@ -390,15 +406,6 @@
           "tls" : true,
           "port" : 443,
           "hostname" : "jsonplaceholder.typicode.com"
-        } ]
-      },
-      "google" : {
-        "root" : "/",
-        "rewrite" : false,
-        "targets" : [ {
-          "hostname" : "google.fr",
-          "port" : 443,
-          "tls" : true
         } ]
       }
     }
