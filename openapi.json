@@ -247,6 +247,43 @@
         "required" : true,
         "description" : "The id of the task"
       } ]
+    },
+    "/testing" : {
+      "get" : {
+        "tags" : [ ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Task"
+                  }
+                }
+              }
+            },
+            "description" : "OK"
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error"
+                }
+              }
+            },
+            "description" : "Generic error response"
+          }
+        },
+        "operationId" : "getTesting",
+        "x-cloud-apim-backend" : {
+          "$ref" : "#/components/x-cloud-apim-backends/google"
+        },
+        "x-cloud-apim-plugins" : {
+          "$ref" : "#/components/x-cloud-apim-plugins/all"
+        }
+      }
     }
   },
   "openapi" : "3.1.0",
