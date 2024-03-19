@@ -248,9 +248,10 @@
         "description" : "The id of the task"
       } ]
     },
-    "/testing" : {
+    "/testing3" : {
       "get" : {
         "tags" : [ ],
+        "summary" : "Super route !",
         "responses" : {
           "200" : {
             "content" : {
@@ -276,50 +277,12 @@
             "description" : "Generic error response"
           }
         },
-        "operationId" : "getTesting",
+        "operationId" : "getTesting3",
         "x-cloud-apim-backend" : {
           "$ref" : "#/components/x-cloud-apim-backends/google"
         },
         "x-cloud-apim-plugins" : {
-          "$ref" : "#/components/x-cloud-apim-plugins/all"
-        }
-      }
-    },
-    "/testing2" : {
-      "get" : {
-        "tags" : [ ],
-        "summary" : "Blablabla",
-        "responses" : {
-          "200" : {
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "array",
-                  "items" : {
-                    "$ref" : "#/components/schemas/Task"
-                  }
-                }
-              }
-            },
-            "description" : "OK"
-          },
-          "default" : {
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/Error"
-                }
-              }
-            },
-            "description" : "Generic error response"
-          }
-        },
-        "operationId" : "getTesting2",
-        "x-cloud-apim-backend" : {
-          "$ref" : "#/components/x-cloud-apim-backends/demo"
-        },
-        "x-cloud-apim-plugins" : {
-          "$ref" : "#/components/x-cloud-apim-plugins/all"
+          "$ref" : "#/components/x-cloud-apim-plugins/#/components/x-cloud-apim-plugins/demoCategory"
         }
       }
     }
