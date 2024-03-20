@@ -55,7 +55,6 @@
         }
       }
     },
-    "/todos2" : { },
     "/todos/{taskId}" : {
       "get" : {
         "tags" : [ "task" ],
@@ -83,6 +82,74 @@
           }
         },
         "operationId" : "tasksRead",
+        "x-cloud-apim-backend" : {
+          "$ref" : "#/components/x-cloud-apim-backends/jsonplaceholder"
+        },
+        "x-cloud-apim-plugins" : {
+          "$ref" : "#/components/x-cloud-apim-plugins/all"
+        }
+      },
+      "put" : {
+        "tags" : [ "task" ],
+        "summary" : "Update an existing task",
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Task"
+                }
+              }
+            },
+            "description" : "The updated task"
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error"
+                }
+              }
+            },
+            "description" : "Generic error response"
+          }
+        },
+        "operationId" : "tasksUpdate",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Task"
+              }
+            }
+          }
+        },
+        "x-cloud-apim-backend" : {
+          "$ref" : "#/components/x-cloud-apim-backends/jsonplaceholder"
+        },
+        "x-cloud-apim-plugins" : {
+          "$ref" : "#/components/x-cloud-apim-plugins/all"
+        }
+      },
+      "delete" : {
+        "tags" : [ "task" ],
+        "summary" : "Delete an existing task",
+        "responses" : {
+          "204" : {
+            "description" : "Task deleted response"
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error"
+                }
+              }
+            },
+            "description" : "Generic error response"
+          }
+        },
+        "operationId" : "tasksDelete",
         "x-cloud-apim-backend" : {
           "$ref" : "#/components/x-cloud-apim-backends/jsonplaceholder"
         },
