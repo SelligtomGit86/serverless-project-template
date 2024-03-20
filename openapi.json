@@ -173,6 +173,43 @@
         }
       }
     },
+    "/testing4" : {
+      "get" : {
+        "tags" : [ ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Task"
+                  }
+                }
+              }
+            },
+            "description" : "OK"
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error"
+                }
+              }
+            },
+            "description" : "Generic error response"
+          }
+        },
+        "operationId" : "getTesting4",
+        "x-cloud-apim-backend" : {
+          "$ref" : "#/components/x-cloud-apim-backends/backenddemo1"
+        },
+        "x-cloud-apim-plugins" : {
+          "$ref" : "#/components/x-cloud-apim-plugins/demoCat"
+        }
+      }
+    },
     "/todos/{taskId}" : {
       "get" : {
         "tags" : [ "task" ],
@@ -285,43 +322,6 @@
         "required" : true,
         "description" : "The id of the task"
       } ]
-    },
-    "/testing4" : {
-      "get" : {
-        "tags" : [ ],
-        "responses" : {
-          "200" : {
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "array",
-                  "items" : {
-                    "$ref" : "#/components/schemas/Task"
-                  }
-                }
-              }
-            },
-            "description" : "OK"
-          },
-          "default" : {
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/Error"
-                }
-              }
-            },
-            "description" : "Generic error response"
-          }
-        },
-        "operationId" : "getTesting4",
-        "x-cloud-apim-backend" : {
-          "$ref" : "#/components/x-cloud-apim-backends/backenddemo1"
-        },
-        "x-cloud-apim-plugins" : {
-          "$ref" : "#/components/x-cloud-apim-plugins/demoCat"
-        }
-      }
     }
   },
   "openapi" : "3.1.0",
@@ -447,16 +447,16 @@
         "plugin" : "cp:otoroshi.next.plugins.ApikeyCalls",
         "enabled" : true
       } ],
+      "demoCat" : [ {
+        "plugin" : "cp:otoroshi.next.plugins.OverrideHost",
+        "enabled" : true
+      } ],
       "demoCategory" : [ {
         "plugin" : "cp:otoroshi.next.plugins.OverrideHost",
         "enabled" : true
       }, {
         "plugin" : "cp:otoroshi.next.plugins.Cors",
         "enabled" : false
-      } ],
-      "demoCat" : [ {
-        "plugin" : "cp:otoroshi.next.plugins.OverrideHost",
-        "enabled" : true
       } ]
     },
     "x-cloud-apim-backends" : {
@@ -478,6 +478,15 @@
           "hostname" : "google.fr"
         } ]
       },
+      "backenddemo1" : {
+        "root" : "/",
+        "rewrite" : false,
+        "targets" : [ {
+          "tls" : true,
+          "port" : 443,
+          "hostname" : "example.com"
+        } ]
+      },
       "jsonplaceholder" : {
         "root" : "/",
         "rewrite" : false,
@@ -487,7 +496,7 @@
           "hostname" : "jsonplaceholder.typicode.com"
         } ]
       },
-      "backenddemo1" : {
+      "example" : {
         "root" : "/",
         "rewrite" : false,
         "targets" : [ {
