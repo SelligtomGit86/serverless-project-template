@@ -135,6 +135,44 @@
         }
       }
     },
+    "/testing3" : {
+      "get" : {
+        "tags" : [ ],
+        "summary" : "Super route !",
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Task"
+                  }
+                }
+              }
+            },
+            "description" : "OK"
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error"
+                }
+              }
+            },
+            "description" : "Generic error response"
+          }
+        },
+        "operationId" : "getTesting3",
+        "x-cloud-apim-backend" : {
+          "$ref" : "#/components/x-cloud-apim-backends/google"
+        },
+        "x-cloud-apim-plugins" : {
+          "$ref" : "#/components/x-cloud-apim-plugins/#/components/x-cloud-apim-plugins/demoCategory"
+        }
+      }
+    },
     "/todos/{taskId}" : {
       "get" : {
         "tags" : [ "task" ],
@@ -248,10 +286,9 @@
         "description" : "The id of the task"
       } ]
     },
-    "/testing3" : {
+    "/testing4" : {
       "get" : {
         "tags" : [ ],
-        "summary" : "Super route !",
         "responses" : {
           "200" : {
             "content" : {
@@ -277,12 +314,12 @@
             "description" : "Generic error response"
           }
         },
-        "operationId" : "getTesting3",
+        "operationId" : "getTesting4",
         "x-cloud-apim-backend" : {
-          "$ref" : "#/components/x-cloud-apim-backends/google"
+          "$ref" : "#/components/x-cloud-apim-backends/backenddemo1"
         },
         "x-cloud-apim-plugins" : {
-          "$ref" : "#/components/x-cloud-apim-plugins/#/components/x-cloud-apim-plugins/demoCategory"
+          "$ref" : "#/components/x-cloud-apim-plugins/demoCat"
         }
       }
     }
@@ -416,6 +453,10 @@
       }, {
         "plugin" : "cp:otoroshi.next.plugins.Cors",
         "enabled" : false
+      } ],
+      "demoCat" : [ {
+        "plugin" : "cp:otoroshi.next.plugins.OverrideHost",
+        "enabled" : true
       } ]
     },
     "x-cloud-apim-backends" : {
@@ -444,6 +485,15 @@
           "tls" : true,
           "port" : 443,
           "hostname" : "jsonplaceholder.typicode.com"
+        } ]
+      },
+      "backenddemo1" : {
+        "root" : "/",
+        "rewrite" : false,
+        "targets" : [ {
+          "hostname" : "example.com",
+          "port" : 443,
+          "tls" : true
         } ]
       }
     }
