@@ -55,6 +55,7 @@
         }
       }
     },
+    "/todos2" : { },
     "/todos/{taskId}" : {
       "get" : {
         "tags" : [ "task" ],
@@ -89,74 +90,6 @@
           "$ref" : "#/components/x-cloud-apim-plugins/all"
         }
       },
-      "put" : {
-        "tags" : [ "task" ],
-        "summary" : "Update an existing task",
-        "responses" : {
-          "200" : {
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/Task"
-                }
-              }
-            },
-            "description" : "The updated task"
-          },
-          "default" : {
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/Error"
-                }
-              }
-            },
-            "description" : "Generic error response"
-          }
-        },
-        "operationId" : "tasksUpdate",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/Task"
-              }
-            }
-          }
-        },
-        "x-cloud-apim-backend" : {
-          "$ref" : "#/components/x-cloud-apim-backends/jsonplaceholder"
-        },
-        "x-cloud-apim-plugins" : {
-          "$ref" : "#/components/x-cloud-apim-plugins/all"
-        }
-      },
-      "delete" : {
-        "tags" : [ "task" ],
-        "summary" : "Delete an existing task",
-        "responses" : {
-          "204" : {
-            "description" : "Task deleted response"
-          },
-          "default" : {
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/Error"
-                }
-              }
-            },
-            "description" : "Generic error response"
-          }
-        },
-        "operationId" : "tasksDelete",
-        "x-cloud-apim-backend" : {
-          "$ref" : "#/components/x-cloud-apim-backends/jsonplaceholder"
-        },
-        "x-cloud-apim-plugins" : {
-          "$ref" : "#/components/x-cloud-apim-plugins/all"
-        }
-      },
       "parameters" : [ {
         "in" : "path",
         "name" : "taskId",
@@ -167,44 +100,6 @@
         "required" : true,
         "description" : "The id of the task"
       } ]
-    },
-    "/todos2" : {
-      "get" : {
-        "tags" : [ ],
-        "summary" : "Get the list of all task",
-        "responses" : {
-          "200" : {
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "array",
-                  "items" : {
-                    "$ref" : "#/components/schemas/Task"
-                  }
-                }
-              }
-            },
-            "description" : "OK"
-          },
-          "default" : {
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/Error"
-                }
-              }
-            },
-            "description" : "Generic error response"
-          }
-        },
-        "operationId" : "justALL",
-        "x-cloud-apim-backend" : {
-          "$ref" : "#/components/x-cloud-apim-backends/jsonplaceholder"
-        },
-        "x-cloud-apim-plugins" : {
-          "$ref" : "#/components/x-cloud-apim-plugins/all"
-        }
-      }
     }
   },
   "openapi" : "3.1.0",
@@ -333,7 +228,7 @@
       "newgrup" : [ ]
     },
     "x-cloud-apim-backends" : {
-      "jsonplaceholder" : {
+      "backenddemo" : {
         "root" : "/",
         "rewrite" : false,
         "targets" : [ {
@@ -342,13 +237,13 @@
           "hostname" : "jsonplaceholder.typicode.com"
         } ]
       },
-      "backenddemo" : {
+      "jsonplaceholder" : {
         "root" : "/",
         "rewrite" : false,
         "targets" : [ {
-          "hostname" : "jsonplaceholder.typicode.com",
+          "tls" : true,
           "port" : 443,
-          "tls" : true
+          "hostname" : "jsonplaceholder.typicode.com"
         } ]
       }
     }
