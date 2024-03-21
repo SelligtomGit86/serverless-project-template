@@ -11,9 +11,9 @@
     "throttling" : 200,
     "description" : "Premium plan"
   } ],
-  "title" : "Test from code editor (C-APIM)",
+  "title" : "Trying to update monetisation fields",
   "monetisation": {
-    "enabled": false,
+    "enabled": true,
     "provider": "stripe",
     "config" : {
       "pricing_table_id" : "${environment.STRIPE_PRICING_TABLE_ID}",
