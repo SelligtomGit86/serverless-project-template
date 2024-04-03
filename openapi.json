@@ -295,15 +295,6 @@
       "newgrup" : [ ]
     },
     "x-cloud-apim-backends" : {
-      "backenddemo" : {
-        "root" : "/",
-        "rewrite" : false,
-        "targets" : [ {
-          "tls" : true,
-          "port" : 443,
-          "hostname" : "jsonplaceholder.typicode.com"
-        } ]
-      },
       "jsonplaceholder" : {
         "root" : "/",
         "rewrite" : false,
