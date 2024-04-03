@@ -6,5 +6,5 @@
   "title" : "Developer portal",
   "enabled" : true,
   "examples" : true,
-  "max_user_created_apikeys" : 2
+  "max_user_created_apikeys" : 4
 }
