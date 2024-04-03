@@ -2,9 +2,62 @@
   "auth" : true,
   "icon" : "https://www.cloud-apim.com/assets/logo/made-with-cloud-apim-inverted.png",
   "path" : "/docs",
-  "plans" : [ ],
-  "title" : "demo",
+  "plans" : [ {
+    "id" : "free",
+    "name" : "Free Plan",
+    "daily" : 25,
+    "default" : true,
+    "monthly" : 500,
+    "throttling" : 5,
+    "description" : "A plan to test the api",
+    "monthly_price" : 0,
+    "annual_price" : 0,
+    "stripe_plan_id" : "prod_PmMAc8EUZWVIL7"
+  }, {
+    "id" : "silver",
+    "name" : "Silver Plan",
+    "daily" : 200,
+    "default" : false,
+    "monthly" : 500,
+    "throttling" : 15,
+    "description" : "All the features contained in the free plan and more quotas to play with",
+    "monthly_price" : 8.99,
+    "annual_price" : 99.99,
+    "stripe_plan_id" : "prod_PmMABDj8tuSLeT"
+  }, {
+    "id" : "gold",
+    "name" : "Gold Plan",
+    "daily" : 500,
+    "default" : false,
+    "monthly" : 12500,
+    "throttling" : 50,
+    "description" : "Includes all the features of the silver plans + more quotas",
+    "monthly_price" : 21.99,
+    "annual_price" : 249.99,
+    "stripe_plan_id" : "prod_PmMBlgONIPG7l0"
+  }, {
+    "id" : "diamond",
+    "name" : "Diamond Plan",
+    "daily" : 1500,
+    "default" : false,
+    "monthly" : 50000,
+    "throttling" : 250,
+    "description" : "For businesses",
+    "monthly_price" : 9.99,
+    "annual_price" : 1099.99,
+    "stripe_plan_id" : "prod_PmMB20ERbk4OzR"
+  } ],
+  "title" : "Updated portal V0.1",
   "enabled" : true,
   "examples" : true,
-  "max_user_created_apikeys" : 4
+  "monetisation" : {
+    "enabled" : true,
+    "provider" : "stripe",
+    "config" : {
+      "pricing_table_id" : "${environment.STRIPE_PRICING_TABLE_ID}",
+      "pub_key" : "${environment.STRIPE_PUB_KEY}",
+      "secret_key" : "${environment.STRIPE_SECRET_KEY}"
+    }
+  },
+  "max_user_created_apikeys" : 3
 }
