@@ -3,8 +3,8 @@
   "icon" : "https://www.cloud-apim.com/assets/logo/made-with-cloud-apim-inverted.png",
   "path" : "/docs",
   "plans" : [ ],
-  "title" : "Developer portal",
+  "title" : "Updated portal V0.1",
   "enabled" : true,
   "examples" : true,
-  "max_user_created_apikeys" : 4
+  "max_user_created_apikeys" : 3
 }
