@@ -1,308 +1,366 @@
 {
-  "info" : {
-    "title" : "TODO API ",
-    "contact" : {
-      "url" : "https://www.cloud-apim.com",
-      "name" : "TODO API",
-      "email" : "contact@cloud-apim.com"
+  "info": {
+    "title": "TODO API ",
+    "contact": {
+      "url": "https://www.cloud-apim.com",
+      "name": "TODO API",
+      "email": "contact@cloud-apim.com"
     },
-    "version" : "1.0.0",
-    "description" : "# Introduction\nWelcome to the reference for the TODO API! \n\nTODO API is a simple api to handle tasks.",
-    "x-logo-none" : {
-      "url" : "https://www.cloud-apim.com/assets/logo/cloud-apim-logo-inverted.png"
+    "version": "1.0.0",
+    "description": "# Introduction\nWelcome to the reference for the TODO API! \n\nTODO API is a simple api to handle tasks.",
+    "x-logo-none": {
+      "url": "https://www.cloud-apim.com/assets/logo/cloud-apim-logo-inverted.png"
     }
   },
-  "tags" : [ {
-    "name" : "task",
-    "description" : "Task management"
-  } ],
-  "paths" : {
-    "/todos" : {
-      "post" : {
-        "tags" : [ ],
-        "summary" : "Create a new task",
-        "responses" : {
-          "200" : {
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "array",
-                  "items" : {
-                    "$ref" : "#/components/schemas/Task"
+  "tags": [
+    {
+      "name": "task",
+      "description": "Task management"
+    }
+  ],
+  "paths": {
+    "/todos": {
+      "post": {
+        "tags": [],
+        "summary": "Create a new task",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Task"
                   }
                 }
               }
             },
-            "description" : "OK"
+            "description": "OK"
           },
-          "default" : {
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/Error"
+          "default": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
                 }
               }
             },
-            "description" : "Generic error response"
+            "description": "Generic error response"
           }
         },
-        "operationId" : "tasksCreate",
-        "x-cloud-apim-backend" : {
-          "$ref" : "#/components/x-cloud-apim-backends/backenddemo"
+        "operationId": "tasksCreate",
+        "x-cloud-apim-backend": {
+          "$ref": "#/components/x-cloud-apim-backends/backenddemo"
         },
-        "x-cloud-apim-plugins" : {
-          "$ref" : "#/components/x-cloud-apim-plugins/newgrup"
+        "x-cloud-apim-plugins": {
+          "$ref": "#/components/x-cloud-apim-plugins/newgrup"
         }
       }
     },
-    "/todos/{taskId}" : {
-      "get" : {
-        "tags" : [ "task" ],
-        "summary" : "Get a single task based on its id",
-        "responses" : {
-          "200" : {
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/Task"
+    "/todos/{taskId}": {
+      "get": {
+        "tags": [
+          "task"
+        ],
+        "summary": "Get a single task based on its id",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
                 }
               }
             },
-            "description" : "Ok"
+            "description": "Ok"
           },
-          "default" : {
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/Error"
+          "default": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
                 }
               }
             },
-            "description" : "Generic error response"
+            "description": "Generic error response"
           }
         },
-        "operationId" : "tasksRead",
-        "x-cloud-apim-backend" : {
-          "$ref" : "#/components/x-cloud-apim-backends/jsonplaceholder"
+        "operationId": "tasksRead",
+        "x-cloud-apim-backend": {
+          "$ref": "#/components/x-cloud-apim-backends/jsonplaceholder"
         },
-        "x-cloud-apim-plugins" : {
-          "$ref" : "#/components/x-cloud-apim-plugins/all"
+        "x-cloud-apim-plugins": {
+          "$ref": "#/components/x-cloud-apim-plugins/all"
         }
       },
-      "put" : {
-        "tags" : [ "task" ],
-        "summary" : "Update an existing task",
-        "responses" : {
-          "200" : {
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/Task"
+      "put": {
+        "tags": [
+          "task"
+        ],
+        "summary": "Update an existing task",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
                 }
               }
             },
-            "description" : "The updated task"
+            "description": "The updated task"
           },
-          "default" : {
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/Error"
+          "default": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
                 }
               }
             },
-            "description" : "Generic error response"
+            "description": "Generic error response"
           }
         },
-        "operationId" : "tasksUpdate",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/Task"
+        "operationId": "tasksUpdate",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Task"
               }
             }
           }
         },
-        "x-cloud-apim-backend" : {
-          "$ref" : "#/components/x-cloud-apim-backends/jsonplaceholder"
+        "x-cloud-apim-backend": {
+          "$ref": "#/components/x-cloud-apim-backends/jsonplaceholder"
         },
-        "x-cloud-apim-plugins" : {
-          "$ref" : "#/components/x-cloud-apim-plugins/all"
+        "x-cloud-apim-plugins": {
+          "$ref": "#/components/x-cloud-apim-plugins/all"
         }
       },
-      "delete" : {
-        "tags" : [ "task" ],
-        "summary" : "Delete an existing task",
-        "responses" : {
-          "204" : {
-            "description" : "Task deleted response"
+      "delete": {
+        "tags": [
+          "task"
+        ],
+        "summary": "Delete an existing task",
+        "responses": {
+          "204": {
+            "description": "Task deleted response"
           },
-          "default" : {
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/Error"
+          "default": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
                 }
               }
             },
-            "description" : "Generic error response"
+            "description": "Generic error response"
           }
         },
-        "operationId" : "tasksDelete",
-        "x-cloud-apim-backend" : {
-          "$ref" : "#/components/x-cloud-apim-backends/jsonplaceholder"
+        "operationId": "tasksDelete",
+        "x-cloud-apim-backend": {
+          "$ref": "#/components/x-cloud-apim-backends/jsonplaceholder"
         },
-        "x-cloud-apim-plugins" : {
-          "$ref" : "#/components/x-cloud-apim-plugins/all"
+        "x-cloud-apim-plugins": {
+          "$ref": "#/components/x-cloud-apim-plugins/all"
         }
       },
-      "parameters" : [ {
-        "in" : "path",
-        "name" : "taskId",
-        "schema" : {
-          "type" : "integer"
-        },
-        "example" : "e1cb23d0-6cbe-4a29-b586-bfa424bc93fd",
-        "required" : true,
-        "description" : "The id of the task"
-      } ]
+      "parameters": [
+        {
+          "in": "path",
+          "name": "taskId",
+          "schema": {
+            "type": "integer"
+          },
+          "example": "e1cb23d0-6cbe-4a29-b586-bfa424bc93fd",
+          "required": true,
+          "description": "The id of the task"
+        }
+      ]
     }
   },
-  "openapi" : "3.1.0",
-  "components" : {
-    "schemas" : {
-      "Task" : {
-        "type" : "object",
-        "required" : [ "description" ],
-        "properties" : {
-          "id" : {
-            "type" : "integer",
-            "format" : "int32",
-            "examples" : [ 1, 2, 3, 4 ],
-            "readOnly" : true,
-            "description" : "id of the task"
+  "openapi": "3.1.0",
+  "components": {
+    "schemas": {
+      "Task": {
+        "type": "object",
+        "required": [
+          "description"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "examples": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "readOnly": true,
+            "description": "id of the task"
           },
-          "title" : {
-            "type" : "string",
-            "examples" : [ "My important task", "Do something" ],
-            "description" : "description of the task"
+          "title": {
+            "type": "string",
+            "examples": [
+              "My important task",
+              "Do something"
+            ],
+            "description": "description of the task"
           },
-          "userId" : {
-            "type" : "integer",
-            "format" : "int32",
-            "examples" : [ 1, 2, 3, 4 ],
-            "description" : "id of the user that created the task"
+          "userId": {
+            "type": "integer",
+            "format": "int32",
+            "examples": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "description": "id of the user that created the task"
           },
-          "completed" : {
-            "type" : "boolean",
-            "description" : "indicates if a taks is completed or not"
+          "completed": {
+            "type": "boolean",
+            "description": "indicates if a taks is completed or not"
           }
         },
-        "description" : "Object representing a Task"
+        "description": "Object representing a Task"
       },
-      "Error" : {
-        "type" : "object",
-        "properties" : {
-          "code" : {
-            "type" : "integer",
-            "format" : "int32",
-            "examples" : [ "1000" ],
-            "description" : "Error code that identify of the error"
+      "Error": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32",
+            "examples": [
+              "1000"
+            ],
+            "description": "Error code that identify of the error"
           },
-          "message" : {
-            "type" : "string",
-            "examples" : [ "Could not perform the task" ],
-            "description" : "Short description of the error"
+          "message": {
+            "type": "string",
+            "examples": [
+              "Could not perform the task"
+            ],
+            "description": "Short description of the error"
           }
         },
-        "description" : "Object representing an error"
+        "description": "Object representing an error"
       }
     },
-    "x-cloud-apim-plugins" : {
-      "all" : [ {
-        "plugin" : "cp:otoroshi.next.plugins.ForceHttpsTraffic",
-        "enabled" : true
-      }, {
-        "plugin" : "cp:otoroshi.next.plugins.DisableHttp10",
-        "enabled" : true
-      }, {
-        "plugin" : "cp:otoroshi.next.plugins.OverrideHost",
-        "enabled" : true
-      }, {
-        "plugin" : "cp:otoroshi.next.plugins.SendOtoroshiHeadersBack",
-        "enabled" : true
-      }, {
-        "config" : {
-          "ttl" : 30,
-          "algo" : {
-            "size" : 512,
-            "type" : "HSAlgoSettings",
-            "base64" : false,
-            "secret" : "variable-not-found"
-          },
-          "version" : "Latest",
-          "add_fields" : null,
-          "header_name" : "Otoroshi-Infos"
+    "x-cloud-apim-plugins": {
+      "all": [
+        {
+          "plugin": "cp:otoroshi.next.plugins.ForceHttpsTraffic",
+          "enabled": true
         },
-        "plugin" : "cp:otoroshi.next.plugins.OtoroshiInfos",
-        "enabled" : true
-      }, {
-        "config" : {
-          "max_age" : null,
-          "allow_origin" : "*",
-          "allow_headers" : [ "Authorization" ],
-          "allow_methods" : [ "GET", "PUT", "POST", "DELETE", "PATCH" ],
-          "expose_headers" : [ ],
-          "allow_credentials" : true
+        {
+          "plugin": "cp:otoroshi.next.plugins.DisableHttp10",
+          "enabled": true
         },
-        "plugin" : "cp:otoroshi.next.plugins.Cors",
-        "enabled" : false
-      }, {
-        "config" : {
-          "routing" : {
-            "enabled" : false
-          },
-          "validate" : true,
-          "mandatory" : true,
-          "extractors" : {
-            "jwt" : {
-              "enabled" : true,
-              "secret_signed" : true,
-              "keypair_signed" : true,
-              "include_request_attrs" : false
-            },
-            "basic" : {
-              "enabled" : true
-            },
-            "client_id" : {
-              "enabled" : false
-            },
-            "oto_bearer" : {
-              "enabled" : true
-            },
-            "custom_headers" : {
-              "enabled" : true
-            }
-          },
-          "update_quotas" : true,
-          "pass_with_user" : false,
-          "wipe_backend_request" : true
+        {
+          "plugin": "cp:otoroshi.next.plugins.OverrideHost",
+          "enabled": true
         },
-        "plugin" : "cp:otoroshi.next.plugins.ApikeyCalls",
-        "enabled" : true
-      } ],
-      "newgrup" : [ ]
+        {
+          "plugin": "cp:otoroshi.next.plugins.SendOtoroshiHeadersBack",
+          "enabled": true
+        },
+        {
+          "config": {
+            "ttl": 30,
+            "algo": {
+              "size": 512,
+              "type": "HSAlgoSettings",
+              "base64": false,
+              "secret": "variable-not-found"
+            },
+            "version": "Latest",
+            "add_fields": null,
+            "header_name": "Otoroshi-Infos"
+          },
+          "plugin": "cp:otoroshi.next.plugins.OtoroshiInfos",
+          "enabled": true
+        },
+        {
+          "config": {
+            "max_age": null,
+            "allow_origin": "*",
+            "allow_headers": [
+              "Authorization"
+            ],
+            "allow_methods": [
+              "GET",
+              "PUT",
+              "POST",
+              "DELETE",
+              "PATCH"
+            ],
+            "expose_headers": [],
+            "allow_credentials": true
+          },
+          "plugin": "cp:otoroshi.next.plugins.Cors",
+          "enabled": false
+        },
+        {
+          "config": {
+            "routing": {
+              "enabled": false
+            },
+            "validate": true,
+            "mandatory": true,
+            "extractors": {
+              "jwt": {
+                "enabled": true,
+                "secret_signed": true,
+                "keypair_signed": true,
+                "include_request_attrs": false
+              },
+              "basic": {
+                "enabled": true
+              },
+              "client_id": {
+                "enabled": false
+              },
+              "oto_bearer": {
+                "enabled": true
+              },
+              "custom_headers": {
+                "enabled": true
+              }
+            },
+            "update_quotas": true,
+            "pass_with_user": false,
+            "wipe_backend_request": true
+          },
+          "plugin": "cp:otoroshi.next.plugins.ApikeyCalls",
+          "enabled": true
+        }
+      ],
+      "newgrup": []
     },
-    "x-cloud-apim-backends" : {
-      "jsonplaceholder" : {
-        "root" : "/",
-        "rewrite" : false,
-        "targets" : [ {
-          "tls" : true,
-          "port" : 443,
-          "hostname" : "jsonplaceholder.typicode.com"
-        } ]
+    "x-cloud-apim-backends": {
+      "jsonplaceholder": {
+        "root": "/",
+        "rewrite": false,
+        "targets": [
+          {
+            "tls": true,
+            "port": 443,
+            "hostname": "jsonplaceholder.typicode.com"
+          }
+        ]
+      },
+      "demo1": {
+        "root": "/azertyuiop",
+        "rewrite": false,
+        "targets": [
+          {
+            "hostname": "google.com",
+            "port": 443,
+            "tls": true
+          }
+        ]
       }
     }
   }
