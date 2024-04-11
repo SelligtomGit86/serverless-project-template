@@ -361,6 +361,22 @@
             "tls": true
           }
         ]
+      },
+      "demo2": {
+        "root": "/demo",
+        "rewrite": false,
+        "targets": [
+          {
+            "hostname": "jsonplaceholder.typicode.com",
+            "port": 443,
+            "tls": true
+          },
+          {
+            "hostname": "google.com",
+            "port": 443,
+            "tls": true
+          }
+        ]
       }
     }
   }
