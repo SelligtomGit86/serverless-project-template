@@ -372,9 +372,18 @@
           },
           "plugin": "cp:otoroshi.next.plugins.ApikeyCalls",
           "enabled": true
+        },
+        {
+          "plugin": "cp:otoroshi.next.plugins.AdditionalHeadersIn",
+          "enabled": true
         }
       ],
-      "newgrup": []
+      "newgrup": [
+        {
+          "plugin": "cp:otoroshi.next.plugins.AdditionalHeadersOut",
+          "enabled": true
+        }
+      ]
     },
     "x-cloud-apim-backends": {
       "jsonplaceholder": {
