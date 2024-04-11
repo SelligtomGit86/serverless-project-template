@@ -177,6 +177,43 @@
           "description": "The id of the task"
         }
       ]
+    },
+    "/demo": {
+      "get": {
+        "tags": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Task"
+                  }
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "default": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Generic error response"
+          }
+        },
+        "operationId": "getDemo",
+        "x-cloud-apim-backend": {
+          "$ref": "#/components/x-cloud-apim-backends/demo1"
+        },
+        "x-cloud-apim-plugins": {
+          "$ref": "#/components/x-cloud-apim-plugins/all"
+        }
+      }
     }
   },
   "openapi": "3.1.0",
@@ -355,22 +392,6 @@
         "root": "/azertyuiop",
         "rewrite": false,
         "targets": [
-          {
-            "hostname": "google.com",
-            "port": 443,
-            "tls": true
-          }
-        ]
-      },
-      "demo2": {
-        "root": "/demo",
-        "rewrite": false,
-        "targets": [
-          {
-            "hostname": "jsonplaceholder.typicode.com",
-            "port": 443,
-            "tls": true
-          },
           {
             "hostname": "google.com",
             "port": 443,
