@@ -349,17 +349,6 @@
       ]
     },
     "x-cloud-apim-backends": {
-      "jsonplaceholder": {
-        "root": "/",
-        "rewrite": false,
-        "targets": [
-          {
-            "tls": true,
-            "port": 443,
-            "hostname": "jsonplaceholder.typicode.com"
-          }
-        ]
-      },
       "demo1": {
         "root": "/azertyuiop",
         "rewrite": false,
@@ -368,6 +357,25 @@
             "hostname": "google.com",
             "port": 443,
             "tls": true
+          }
+        ]
+      },
+      "jsonplaceholder2": {
+        "root": "/",
+        "rewrite": false,
+        "targets": [
+          {
+            "hostname": "jsonplaceholder.typicode.com",
+            "port": 443,
+            "tls": true
+          },
+          {
+            "hostname": "demo.com",
+            "port": 8008
+          },
+          {
+            "hostname": "demoo1",
+            "port": 8080
           }
         ]
       }
